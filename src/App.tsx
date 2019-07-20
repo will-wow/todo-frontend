@@ -1,12 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.scss";
-import Counter from "./components/Counter";
+import Todo from "./todo/Todo";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Todo /></Todo>
+      <Todo />
     </div>
   );
 };

@@ -4,37 +4,17 @@
   "private": true,
   "dependencies": {
     "@types/classnames": "^2.2.9",
-    "@types/enzyme": "^3.10.3",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "24.0.15",
     "@types/lodash": "^4.14.136",
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "classnames": "^2.2.6",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-jest": "^22.6.4",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^2.4.0",
-    "jest-enzyme": "^7.0.2",
-    "jest-junit": "^6.4.0",
-    "lint-staged": "^8.2.0",
     "lodash": "^4.17.14",
-    "node-sass-chokidar": "^1.3.5",
-    "npm-run-all": "^4.1.3",
-    "prettier": "1.18.2",
+    "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "serve": "^11.0.1",
-    "shelljs": "^0.8.2",
-    "stylelint": "^10.0.1",
-    "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-config-standard": "^18.3.0",
-    "stylelint-declaration-use-variable": "^1.6.1",
-    "stylelint-scss": "^3.8.0",
+    "result-async": "^1.2.3",
     "typescript": "^3.5.3"
   },
   "scripts": {
@@ -48,7 +28,8 @@
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm-run-all build"
+    "heroku-postbuild": "npm-run-all build",
+    "server": "json-server db.json --port 3001"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": "eslint",
@@ -81,5 +62,30 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "24.0.15",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.4.0",
+    "jest-enzyme": "^7.0.2",
+    "jest-junit": "^6.4.0",
+    "json-server": "^0.15.0",
+    "lint-staged": "^8.2.0",
+    "node-sass-chokidar": "^1.3.5",
+    "npm-run-all": "^4.1.3",
+    "prettier": "1.18.2",
+    "serve": "^11.0.1",
+    "shelljs": "^0.8.2",
+    "stylelint": "^10.0.1",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-declaration-use-variable": "^1.6.1",
+    "stylelint-scss": "^3.8.0"
   }
 }
