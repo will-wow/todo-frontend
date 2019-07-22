@@ -3,13 +3,13 @@
     {
       "id": 1,
       "title": "Learn Elixir",
-      "date": "2019-07-04",
+      "createdAt": "2019-07-04",
       "done": false
     },
     {
       "id": 2,
       "title": "Get milk",
-      "date": "2019-07-06",
+      "createdAt": "2019-07-06",
       "done": true
     }
   ]

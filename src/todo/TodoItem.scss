@@ -1,0 +1,13 @@
+.TodoItem {
+  display: flex;
+}
+
+.TodoItem__input {
+  flex-grow: 1;
+}
+
+.TodoItem--done {
+  .TodoItem__input {
+    text-decoration: line-through;
+  }
+}

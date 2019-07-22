@@ -8,15 +8,17 @@
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "@types/uuid": "^3.4.5",
     "classnames": "^2.2.6",
-    "date-fns": "2.0.0-beta.2",
+    "date-fns": "^1.30.1",
     "lodash": "^4.17.14",
     "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "result-async": "^1.2.3",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "prestart": "node bin/pre-start",
@@ -30,7 +32,7 @@
     "test:coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm-run-all build",
-    "server": "json-server db.json --port 3001"
+    "server": "node mock-server/server.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": "eslint",

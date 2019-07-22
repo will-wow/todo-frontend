@@ -1,13 +1,17 @@
 import React from "react";
 import { filter } from "lodash";
 import * as Todo from "./todo";
+import TodoItem from "./TodoItem";
+
+import "./TodoList.scss";
 
 interface Props {
   todoList: Todo.List;
-  updateTodo: (todo: Todo.T) => void;
+  onTodoChange: (todo: Todo.T) => void;
+  onDelete: (todo: Todo.T) => void;
 }
 
-const TodoList: React.FC<Props> = ({ todoList, updateTodo }) => {
+const TodoList: React.FC<Props> = ({ todoList, onTodoChange, onDelete }) => {
   const notDone = filter(todoList, { done: false });
   const done = filter(todoList, { done: true });
 
@@ -15,21 +19,22 @@ const TodoList: React.FC<Props> = ({ todoList, updateTodo }) => {
     <div className="TodoList">
       <h1>Todo List</h1>
       {notDone.map(todo => (
-        <div className="Todo" key={todo.id}>
-          {todo.title}
-          <button onClick={() => updateTodo({ ...todo, done: true })}>
-            Done
-          </button>
-        </div>
+        <TodoItem
+          key={todo.uuid || todo.id}
+          todo={todo}
+          onChange={onTodoChange}
+          onDelete={onDelete}
+        />
       ))}
+
       <h2>Done Items</h2>
       {done.map(todo => (
-        <div className="Todo Todo--done" key={todo.id}>
-          {todo.title}
-          <button onClick={() => updateTodo({ ...todo, done: false })}>
-            Undo
-          </button>
-        </div>
+        <TodoItem
+          todo={todo}
+          key={todo.uuid || todo.id}
+          onChange={onTodoChange}
+          onDelete={onDelete}
+        />
       ))}
     </div>
   );
