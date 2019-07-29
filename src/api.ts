@@ -1,5 +1,6 @@
 import { ok, error, ResultP } from "result-async";
 import { stringify } from "query-string";
+import { camelizeKeys } from "humps";
 
 const fetchWithBody = (method: string) => async <Ok, Error>(
   url: string,
@@ -26,7 +27,7 @@ const fetchWithBody = (method: string) => async <Ok, Error>(
 
     const json = await response.json();
 
-    return ok(json);
+    return ok(camelizeKeys(json) as Ok);
   } catch (e) {
     return error(e.message);
   }

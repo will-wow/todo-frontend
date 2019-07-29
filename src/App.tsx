@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.scss";
-import Todo from "./todo/Todo";
+import TodoContainer from "./todo/TodoContainer";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Todo />
+      <TodoContainer />
     </div>
   );
 };
