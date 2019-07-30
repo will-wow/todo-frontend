@@ -56,8 +56,10 @@ const reducer: Reducer<TodoStore, TodoAction> = (
 
       return { ...state, todoMap: updatedMap };
     }
+    default: {
+      return state;
+    }
   }
-  return state;
 };
 
 export default reducer;

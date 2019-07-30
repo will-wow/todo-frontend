@@ -1,11 +1,13 @@
 import React from "react";
 import { filter } from "lodash";
-import { Heading } from "rebass";
+import { Box, Heading, Flex } from "rebass";
 
 import * as Todo from "./todo";
 import TodoItem from "./TodoItem";
 
-import "./TodoList.scss";
+import InboxZero from "../user/InboxZero";
+import UsernameInput from "../user/UsernameInput";
+import Hr from "../theme/Hr";
 
 export interface TodoListProps {
   todoList: Todo.List;
@@ -20,10 +22,19 @@ const TodoList: React.FC<TodoListProps> = ({
 }) => {
   const notDone = filter(todoList, { done: false });
   const done = filter(todoList, { done: true });
+  const isAllDone = notDone.length === 1;
 
   return (
-    <div className="TodoList">
-      <Heading mb={2}>Todo List</Heading>
+    <Box className="TodoList" mx="auto" style={{ maxWidth: "400px" }}>
+      <Flex mb="2" justifyContent="space-between">
+        <Heading>Todo List for:</Heading>
+        <UsernameInput />
+      </Flex>
+
+      <Hr />
+
+      {isAllDone && <InboxZero />}
+
       {notDone.map(todo => (
         <TodoItem
           key={todo.uuid || todo.id}
@@ -33,7 +44,7 @@ const TodoList: React.FC<TodoListProps> = ({
         />
       ))}
 
-      <Heading fontSize={3} mt={1}>
+      <Heading fontSize={3} mt={2}>
         Done Items
       </Heading>
       {done.map(todo => (
@@ -44,7 +55,7 @@ const TodoList: React.FC<TodoListProps> = ({
           onDelete={onDelete}
         />
       ))}
-    </div>
+    </Box>
   );
 };
 

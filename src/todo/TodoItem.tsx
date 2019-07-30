@@ -1,10 +1,8 @@
 import React from "react";
 import cx from "classnames";
 import * as Todo from "./todo";
-import { Button, Card } from "rebass";
+import { Button, Flex } from "rebass";
 import Input from "../theme/Input";
-
-import "./TodoItem.scss";
 
 interface Props {
   todo: Todo.T;
@@ -25,25 +23,30 @@ const TodoItem: React.FC<Props> = ({ todo, onChange, onDelete }) => {
 
   const handleDelete = () => onDelete(todo);
 
+  const buttonText = done ? "Undo" : "Done";
+  const buttonColor = done ? "salmon" : "blue";
+  const textDecoration = done ? "line-through" : "";
+
   return (
-    <Card className={cx("TodoItem", { "TodoItem--done": done })} my="1">
+    <Flex className={cx("TodoItem", { "TodoItem--done": done })} my="1">
       <Input
         placeholder="Enter a todo item"
         value={title}
         onChange={handleChange}
         className="TodoItem__input"
+        style={{ flexGrow: 1, textDecoration }}
       />
       {!Todo.isNew(todo) && (
         <>
-          <Button onClick={handleStatusChange} mx="1" bg="blue">
-            {done ? "Undo" : "Done"}
+          <Button onClick={handleStatusChange} bg={buttonColor} mx="1">
+            {buttonText}
           </Button>
           <Button onClick={handleDelete} bg="red">
             X
           </Button>
         </>
       )}
-    </Card>
+    </Flex>
   );
 };
 
