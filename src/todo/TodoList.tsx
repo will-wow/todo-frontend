@@ -1,5 +1,7 @@
 import React from "react";
 import { filter } from "lodash";
+import { Heading } from "rebass";
+
 import * as Todo from "./todo";
 import TodoItem from "./TodoItem";
 
@@ -21,7 +23,7 @@ const TodoList: React.FC<TodoListProps> = ({
 
   return (
     <div className="TodoList">
-      <h1>Todo List</h1>
+      <Heading mb={2}>Todo List</Heading>
       {notDone.map(todo => (
         <TodoItem
           key={todo.uuid || todo.id}
@@ -31,7 +33,9 @@ const TodoList: React.FC<TodoListProps> = ({
         />
       ))}
 
-      <h2>Done Items</h2>
+      <Heading fontSize={3} mt={1}>
+        Done Items
+      </Heading>
       {done.map(todo => (
         <TodoItem
           todo={todo}

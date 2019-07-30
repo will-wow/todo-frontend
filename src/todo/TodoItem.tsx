@@ -1,6 +1,8 @@
 import React from "react";
 import cx from "classnames";
 import * as Todo from "./todo";
+import { Button, Card } from "rebass";
+import Input from "../theme/Input";
 
 import "./TodoItem.scss";
 
@@ -24,19 +26,24 @@ const TodoItem: React.FC<Props> = ({ todo, onChange, onDelete }) => {
   const handleDelete = () => onDelete(todo);
 
   return (
-    <div className={cx("TodoItem", { "TodoItem--done": done })}>
-      <input
+    <Card className={cx("TodoItem", { "TodoItem--done": done })} my="1">
+      <Input
+        placeholder="Enter a todo item"
         value={title}
         onChange={handleChange}
         className="TodoItem__input"
       />
       {!Todo.isNew(todo) && (
         <>
-          <button onClick={handleStatusChange}>{done ? "Undo" : "Done"}</button>
-          <button onClick={handleDelete}>X</button>
+          <Button onClick={handleStatusChange} mx="1" bg="blue">
+            {done ? "Undo" : "Done"}
+          </Button>
+          <Button onClick={handleDelete} bg="red">
+            X
+          </Button>
         </>
       )}
-    </div>
+    </Card>
   );
 };
 

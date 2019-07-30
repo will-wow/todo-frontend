@@ -6,7 +6,6 @@ import * as serviceWorker from "./serviceWorker";
 
 import App from "./App";
 import configureStore from "./redux/configureStore";
-import "./index.scss";
 
 const store = configureStore();
 
