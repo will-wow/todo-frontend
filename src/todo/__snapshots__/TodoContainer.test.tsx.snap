@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoContainer connected component snapshots 1`] = `
+"<Provider store={{...}}>
+  <Connect(TodoContainer)>
+    <TodoContainer todoList={{...}} loadTodoList={[Function]} updateTodo={[Function]} deleteTodo={[Function]}>
+      <div className=\\"Todo\\">
+        <TodoList todoList={{...}} onTodoChange={[Function]} onDelete={[Function]}>
+          <div className=\\"TodoList\\">
+            <h1>
+              Todo List
+            </h1>
+            <TodoItem todo={{...}} onChange={[Function]} onDelete={[Function]}>
+              <div className=\\"TodoItem\\">
+                <input value=\\"Pending Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" />
+                <button onClick={[Function: handleStatusChange]}>
+                  Done
+                </button>
+                <button onClick={[Function: handleDelete]}>
+                  X
+                </button>
+              </div>
+            </TodoItem>
+            <TodoItem todo={{...}} onChange={[Function]} onDelete={[Function]}>
+              <div className=\\"TodoItem\\">
+                <input value=\\"New Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" />
+                <button onClick={[Function: handleStatusChange]}>
+                  Done
+                </button>
+                <button onClick={[Function: handleDelete]}>
+                  X
+                </button>
+              </div>
+            </TodoItem>
+            <h2>
+              Done Items
+            </h2>
+            <TodoItem todo={{...}} onChange={[Function]} onDelete={[Function]}>
+              <div className=\\"TodoItem TodoItem--done\\">
+                <input value=\\"Done Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" />
+                <button onClick={[Function: handleStatusChange]}>
+                  Undo
+                </button>
+                <button onClick={[Function: handleDelete]}>
+                  X
+                </button>
+              </div>
+            </TodoItem>
+          </div>
+        </TodoList>
+      </div>
+    </TodoContainer>
+  </Connect(TodoContainer)>
+</Provider>"
+`;

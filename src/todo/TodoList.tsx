@@ -5,13 +5,17 @@ import TodoItem from "./TodoItem";
 
 import "./TodoList.scss";
 
-interface Props {
+export interface TodoListProps {
   todoList: Todo.List;
   onTodoChange: (todo: Todo.T) => void;
   onDelete: (todo: Todo.T) => void;
 }
 
-const TodoList: React.FC<Props> = ({ todoList, onTodoChange, onDelete }) => {
+const TodoList: React.FC<TodoListProps> = ({
+  todoList,
+  onTodoChange,
+  onDelete
+}) => {
   const notDone = filter(todoList, { done: false });
   const done = filter(todoList, { done: true });
 

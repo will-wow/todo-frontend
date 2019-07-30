@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList enzyme shallow snapshots 1`] = `
+"<div className=\\"TodoList\\">
+  <h1>
+    Todo List
+  </h1>
+  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
+  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
+  <h2>
+    Done Items
+  </h2>
+  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
+</div>"
+`;
+
+exports[`TodoList react-test-renderer snapshots 1`] = `
+<div
+  className="TodoList"
+>
+  <h1>
+    Todo List
+  </h1>
+  <div
+    className="TodoItem"
+  >
+    <input
+      className="TodoItem__input"
+      onChange={[Function]}
+      value="Pending Item"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Done
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <div
+    className="TodoItem"
+  >
+    <input
+      className="TodoItem__input"
+      onChange={[Function]}
+      value="New Item"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Done
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <h2>
+    Done Items
+  </h2>
+  <div
+    className="TodoItem TodoItem--done"
+  >
+    <input
+      className="TodoItem__input"
+      onChange={[Function]}
+      value="Done Item"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Undo
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+</div>
+`;
