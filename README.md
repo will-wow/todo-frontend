@@ -1,6 +1,10 @@
 # todo-frontend
 
-This is a React 16 app.
+A simple TypeScript React todo app. Just a testbed for different backends and testing tools.
+
+Demo version with localStorage persistance:
+
+[todo-react-testing.surge.sh](https://todo-react-testing.surge.sh/)
 
 ## Prerequisites
 
@@ -11,13 +15,13 @@ This is a React 16 app.
 
 Install dependencies:
 
-```
+```bash
 yarn install
 ```
 
 Start the server:
 
-```
+```bash
 yarn start
 ```
 
@@ -30,8 +34,9 @@ This will launch the app at:
 - **`yarn start`** starts the development server listing on port 3000. Changes to .js or .scss files automatically refresh in the browser.
 - **`yarn test`** runs tests in "watch" mode, automatically focusing on tests or code that were modified since the last commit. Press the `a` key after the test runner has started to watch all tests in the project.
 - **`yarn test:coverage`** runs all tests, prints coverage stats, and then exits.
-- **`yarn lint`** runs all ESLint checks and then exits.
+- **`yarn format`** autofix with eslint and prettier
 - **`yarn build`** generates an optimized bundle of the app into the `build` directory, suitable for deployment.
+- **`yarn deploy`** send the build directory to surge
 
 ---
 

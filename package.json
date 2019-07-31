@@ -41,7 +41,7 @@
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm-run-all build"
+    "deploy": "surge build https://todo-react-testing.surge.sh"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": "eslint"
@@ -97,6 +97,7 @@
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3",
     "serve": "^11.0.1",
-    "shelljs": "^0.8.2"
+    "shelljs": "^0.8.2",
+    "surge": "^0.21.3"
   }
 }
