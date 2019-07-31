@@ -11,11 +11,9 @@ interface InboxZeroProps {
 
 const InboxZero: React.FC<InboxZeroProps> = ({ username }) => {
   return (
-    <Card border="1px solid" borderColor="gray" px="2" py="4">
+    <Card border="1px solid" color="blue" borderColor="blue" px="2" py="4">
       <Flex>
-        <Heading color="gray" mx="auto">
-          Nice, {username}, you're done!
-        </Heading>
+        <Heading mx="auto">Nice, {username}, you're done!</Heading>
       </Flex>
     </Card>
   );
