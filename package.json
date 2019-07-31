@@ -45,7 +45,7 @@
     "server": "node mock-server/server.js"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": "eslint"
+    "src/**/*.{ts,tsx}": "eslint"
   },
   "engines": {
     "node": "12.6.0",
