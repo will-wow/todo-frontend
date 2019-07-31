@@ -6,6 +6,11 @@ import TodoContainer from "./todo/TodoContainer";
 
 import GlobalStyle from "./theme/GlobalStyle";
 import theme from "./theme/theme";
+import mockServer from "./mockServer";
+
+if (process.env.REACT_APP_MOCK_API) {
+  mockServer();
+}
 
 const App: React.FC = () => {
   return (
