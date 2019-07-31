@@ -1,8 +1,21 @@
-import React from "react";
-import { Box, BoxProps } from "rebass";
+import styled from "styled-components";
 
-const Hr: React.FC<BoxProps> = props => (
-  <Box as="hr" bg={props.color} style={{ border: 1, height: 1 }} {...props} />
+import {
+  borderColor,
+  BorderColorProps,
+  borderWidth,
+  BorderWidthProps
+} from "styled-system";
+
+const Hr = styled.hr<BorderWidthProps & BorderColorProps>(
+  { borderStyle: "solid" },
+  borderColor,
+  borderWidth
 );
+
+Hr.defaultProps = {
+  borderColor: "red",
+  borderWidth: 1
+};
 
 export default Hr;

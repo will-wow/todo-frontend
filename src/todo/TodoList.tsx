@@ -34,12 +34,12 @@ const TodoList: React.FC<TodoListProps> = ({
         max-width: 400px;
       `}
     >
-      <Flex mb="2" justifyContent="space-between">
+      <Flex mb="2" justifyContent="space-between" alignItems="flex-end">
         <Heading>Todo List for:</Heading>
         <UsernameInput />
       </Flex>
 
-      <Hr />
+      <Hr borderColor="gray" />
 
       {isAllDone && <InboxZero />}
 

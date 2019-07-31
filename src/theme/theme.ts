@@ -4,7 +4,8 @@ export default {
     lightBlue: "#99B5C9",
     red: "#B3413E",
     salmon: "#FFA5A3",
-    yellow: "#FAFAE3"
+    yellow: "#FAFAE3",
+    gray: "#808080"
   },
   fonts: {
     sans: '"Fira Sans", "sans-serif"',
