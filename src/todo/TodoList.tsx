@@ -2,6 +2,8 @@ import React from "react";
 import { filter } from "lodash";
 import { Box, Heading, Flex } from "rebass";
 
+import "styled-components/macro";
+
 import * as Todo from "./todo";
 import TodoItem from "./TodoItem";
 
@@ -25,7 +27,13 @@ const TodoList: React.FC<TodoListProps> = ({
   const isAllDone = notDone.length === 1;
 
   return (
-    <Box className="TodoList" mx="auto" style={{ maxWidth: "400px" }}>
+    <Box
+      className="TodoList"
+      mx="auto"
+      css={`
+        max-width: 400px;
+      `}
+    >
       <Flex mb="2" justifyContent="space-between">
         <Heading>Todo List for:</Heading>
         <UsernameInput />
