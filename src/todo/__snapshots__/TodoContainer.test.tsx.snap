@@ -6,11 +6,11 @@ exports[`TodoContainer connected component snapshots 1`] = `
     <TodoContainer todoList={{...}} loadTodoList={[Function]} updateTodo={[Function]} deleteTodo={[Function]}>
       <div className=\\"Todo\\">
         <TodoList todoList={{...}} onTodoChange={[Function]} onDelete={[Function]}>
-          <TodoList___StyledBox className=\\"TodoList\\" mx=\\"auto\\">
-            <StyledComponent className=\\"TodoList\\" mx=\\"auto\\" forwardedComponent={{...}} forwardedRef={{...}}>
-              <div className=\\"sc-bdVaJa TodoList TodoList___StyledBox-sc-6t4krw-0 hoYIoA\\">
-                <Styled(styled.div) mb=\\"2\\" justifyContent=\\"space-between\\" alignItems=\\"flex-end\\">
-                  <StyledComponent mb=\\"2\\" justifyContent=\\"space-between\\" alignItems=\\"flex-end\\" forwardedComponent={{...}} forwardedRef={{...}}>
+          <styled.div className=\\"TodoList\\" mx=\\"auto\\" style={{...}}>
+            <StyledComponent className=\\"TodoList\\" mx=\\"auto\\" style={{...}} forwardedComponent={{...}} forwardedRef={{...}}>
+              <div className=\\"TodoList sc-bdVaJa hTTfNc\\" style={{...}}>
+                <Styled(styled.div) mb={2} justifyContent=\\"space-between\\" alignItems=\\"flex-end\\">
+                  <StyledComponent mb={2} justifyContent=\\"space-between\\" alignItems=\\"flex-end\\" forwardedComponent={{...}} forwardedRef={{...}}>
                     <div className=\\"sc-bdVaJa sc-bwzfXH dpqGKp\\">
                       <Styled(Styled(styled.div)) as=\\"h2\\" m={0} fontSize={4} fontWeight=\\"bold\\">
                         <StyledComponent as=\\"h2\\" m={0} fontSize={4} fontWeight=\\"bold\\" forwardedComponent={{...}} forwardedRef={{...}}>
@@ -21,9 +21,9 @@ exports[`TodoContainer connected component snapshots 1`] = `
                       </Styled(Styled(styled.div))>
                       <Connect(UsernameInput)>
                         <UsernameInput username=\\"User\\" updateUsername={[Function]}>
-                          <Styled(Styled(styled.div)) value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\">
-                            <StyledComponent value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" forwardedComponent={{...}} forwardedRef={{...}}>
-                              <input value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" className=\\"sc-bdVaJa sc-htpNat sc-htoDjs hEJtPv\\" />
+                          <Styled(Styled(styled.div)) value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1}>
+                            <StyledComponent value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1} forwardedComponent={{...}} forwardedRef={{...}}>
+                              <input value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" fontSize={1} className=\\"sc-bdVaJa sc-htpNat sc-htoDjs jplWqw\\" />
                             </StyledComponent>
                           </Styled(Styled(styled.div))>
                         </UsernameInput>
@@ -40,9 +40,9 @@ exports[`TodoContainer connected component snapshots 1`] = `
                   <Styled(styled.div) className=\\"TodoItem\\" my=\\"1\\">
                     <StyledComponent className=\\"TodoItem\\" my=\\"1\\" forwardedComponent={{...}} forwardedRef={{...}}>
                       <div className=\\"sc-bdVaJa TodoItem sc-bwzfXH dKmwgv\\">
-                        <Styled(Styled(styled.div)) placeholder=\\"Enter a todo item\\" value=\\"Pending Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\">
-                          <StyledComponent placeholder=\\"Enter a todo item\\" value=\\"Pending Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" forwardedComponent={{...}} forwardedRef={{...}}>
-                            <input placeholder=\\"Enter a todo item\\" value=\\"Pending Item\\" onChange={[Function: handleChange]} className=\\"sc-bdVaJa sc-htpNat TodoItem__input sc-htoDjs hEJtPv\\" style={{...}} />
+                        <Styled(Styled(styled.div)) placeholder=\\"Enter a todo item\\" value=\\"Pending Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1}>
+                          <StyledComponent placeholder=\\"Enter a todo item\\" value=\\"Pending Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1} forwardedComponent={{...}} forwardedRef={{...}}>
+                            <input placeholder=\\"Enter a todo item\\" value=\\"Pending Item\\" onChange={[Function: handleChange]} className=\\"sc-bdVaJa sc-htpNat TodoItem__input sc-htoDjs jplWqw\\" style={{...}} fontSize={1} />
                           </StyledComponent>
                         </Styled(Styled(styled.div))>
                         <Styled(styled.div) onClick={[Function: handleStatusChange]} bg=\\"blue\\" mx=\\"1\\" as=\\"button\\" fontSize=\\"inherit\\" fontWeight=\\"bold\\" m={0} px={3} py={2} color=\\"white\\" border={0} borderRadius={4}>
@@ -67,9 +67,9 @@ exports[`TodoContainer connected component snapshots 1`] = `
                   <Styled(styled.div) className=\\"TodoItem\\" my=\\"1\\">
                     <StyledComponent className=\\"TodoItem\\" my=\\"1\\" forwardedComponent={{...}} forwardedRef={{...}}>
                       <div className=\\"sc-bdVaJa TodoItem sc-bwzfXH dKmwgv\\">
-                        <Styled(Styled(styled.div)) placeholder=\\"Enter a todo item\\" value=\\"New Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\">
-                          <StyledComponent placeholder=\\"Enter a todo item\\" value=\\"New Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" forwardedComponent={{...}} forwardedRef={{...}}>
-                            <input placeholder=\\"Enter a todo item\\" value=\\"New Item\\" onChange={[Function: handleChange]} className=\\"sc-bdVaJa sc-htpNat TodoItem__input sc-htoDjs hEJtPv\\" style={{...}} />
+                        <Styled(Styled(styled.div)) placeholder=\\"Enter a todo item\\" value=\\"New Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1}>
+                          <StyledComponent placeholder=\\"Enter a todo item\\" value=\\"New Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1} forwardedComponent={{...}} forwardedRef={{...}}>
+                            <input placeholder=\\"Enter a todo item\\" value=\\"New Item\\" onChange={[Function: handleChange]} className=\\"sc-bdVaJa sc-htpNat TodoItem__input sc-htoDjs jplWqw\\" style={{...}} fontSize={1} />
                           </StyledComponent>
                         </Styled(Styled(styled.div))>
                         <Styled(styled.div) onClick={[Function: handleStatusChange]} bg=\\"blue\\" mx=\\"1\\" as=\\"button\\" fontSize=\\"inherit\\" fontWeight=\\"bold\\" m={0} px={3} py={2} color=\\"white\\" border={0} borderRadius={4}>
@@ -98,12 +98,12 @@ exports[`TodoContainer connected component snapshots 1`] = `
                   </StyledComponent>
                 </Styled(Styled(styled.div))>
                 <TodoItem todo={{...}} onChange={[Function]} onDelete={[Function]}>
-                  <Styled(styled.div) className=\\"TodoItem TodoItem--done\\" my=\\"1\\">
-                    <StyledComponent className=\\"TodoItem TodoItem--done\\" my=\\"1\\" forwardedComponent={{...}} forwardedRef={{...}}>
-                      <div className=\\"sc-bdVaJa TodoItem TodoItem--done sc-bwzfXH dKmwgv\\">
-                        <Styled(Styled(styled.div)) placeholder=\\"Enter a todo item\\" value=\\"Done Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\">
-                          <StyledComponent placeholder=\\"Enter a todo item\\" value=\\"Done Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" forwardedComponent={{...}} forwardedRef={{...}}>
-                            <input placeholder=\\"Enter a todo item\\" value=\\"Done Item\\" onChange={[Function: handleChange]} className=\\"sc-bdVaJa sc-htpNat TodoItem__input sc-htoDjs hEJtPv\\" style={{...}} />
+                  <Styled(styled.div) className=\\"TodoItem\\" my=\\"1\\">
+                    <StyledComponent className=\\"TodoItem\\" my=\\"1\\" forwardedComponent={{...}} forwardedRef={{...}}>
+                      <div className=\\"sc-bdVaJa TodoItem sc-bwzfXH dKmwgv\\">
+                        <Styled(Styled(styled.div)) placeholder=\\"Enter a todo item\\" value=\\"Done Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1}>
+                          <StyledComponent placeholder=\\"Enter a todo item\\" value=\\"Done Item\\" onChange={[Function: handleChange]} className=\\"TodoItem__input\\" style={{...}} as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1} forwardedComponent={{...}} forwardedRef={{...}}>
+                            <input placeholder=\\"Enter a todo item\\" value=\\"Done Item\\" onChange={[Function: handleChange]} className=\\"sc-bdVaJa sc-htpNat TodoItem__input sc-htoDjs jplWqw\\" style={{...}} fontSize={1} />
                           </StyledComponent>
                         </Styled(Styled(styled.div))>
                         <Styled(styled.div) onClick={[Function: handleStatusChange]} bg=\\"salmon\\" mx=\\"1\\" as=\\"button\\" fontSize=\\"inherit\\" fontWeight=\\"bold\\" m={0} px={3} py={2} color=\\"white\\" border={0} borderRadius={4}>
@@ -126,7 +126,7 @@ exports[`TodoContainer connected component snapshots 1`] = `
                 </TodoItem>
               </div>
             </StyledComponent>
-          </TodoList___StyledBox>
+          </styled.div>
         </TodoList>
       </div>
     </TodoContainer>

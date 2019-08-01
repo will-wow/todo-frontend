@@ -3,7 +3,17 @@ import { shallow, ShallowWrapper, mount, ReactWrapper } from "enzyme";
 import renderer from "react-test-renderer";
 import { render, fireEvent } from "@testing-library/react";
 
+import { Provider } from "react-redux";
+import configureMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
+
 import TodoList, { TodoListProps } from "./TodoList";
+
+import { Store } from "../redux/reducers";
+import defaultStore from "../redux/defaultStore";
+
+const middleware = [thunk];
+const mockStore = configureMockStore<Store>(middleware);
 
 const TODO_LIST = [
   {
@@ -42,7 +52,13 @@ describe("TodoList", () => {
     let component: renderer.ReactTestRenderer;
 
     beforeEach(() => {
-      component = renderer.create(<TodoList {...props} />);
+      const store = mockStore(defaultStore);
+
+      component = renderer.create(
+        <Provider store={store}>
+          <TodoList {...props} />
+        </Provider>
+      );
     });
 
     it("snapshots", () => {
