@@ -9,7 +9,8 @@ Input.defaultProps = {
   p: 2,
   borderWidth: "1px",
   borderStyle: "solid",
-  borderColor: "gray"
+  borderColor: "gray",
+  fontSize: 1
 };
 
 export default Input;

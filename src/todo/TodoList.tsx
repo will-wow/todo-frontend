@@ -31,7 +31,7 @@ const TodoList: React.FC<TodoListProps> = ({
       className="TodoList"
       mx="auto"
       css={`
-        max-width: 400px;
+        max-width: 25rem;
       `}
     >
       <Flex mb="2" justifyContent="space-between" alignItems="flex-end">
