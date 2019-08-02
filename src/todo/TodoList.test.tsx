@@ -1,6 +1,10 @@
 import React from "react";
 import { shallow, ShallowWrapper, mount, ReactWrapper } from "enzyme";
+
 import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
+import ReactTestUtils from "react-dom/test-utils";
+
 import { render, fireEvent } from "@testing-library/react";
 
 import { Provider } from "react-redux";
@@ -30,7 +34,7 @@ const TODO_LIST = [
     createdAt: "2019-02-01"
   },
   {
-    id: 1,
+    id: 2,
     title: "Done Item",
     done: true,
     createdAt: "2019-01-01"
@@ -48,42 +52,70 @@ describe("TodoList", () => {
     };
   });
 
-  describe("react-test-renderer", () => {
-    let component: renderer.ReactTestRenderer;
+  describe("full render", () => {
+    describe("react-test-renderer", () => {
+      let component: renderer.ReactTestRenderer;
 
-    beforeEach(() => {
-      const store = mockStore(defaultStore);
+      beforeEach(() => {
+        const store = mockStore(defaultStore);
 
-      component = renderer.create(
-        <Provider store={store}>
-          <TodoList {...props} />
-        </Provider>
-      );
-    });
+        component = renderer.create(
+          <Provider store={store}>
+            <TodoList {...props} />
+          </Provider>
+        );
+      });
 
-    it("snapshots", () => {
-      expect(component.toJSON()).toMatchSnapshot();
+      it("snapshots", () => {
+        expect(component.toJSON()).toMatchSnapshot();
+      });
     });
   });
 
-  describe("enzyme shallow", () => {
-    let wrapper: ShallowWrapper;
+  describe("shallow", () => {
+    describe("react-test-renderer", () => {
+      let component: React.ReactElement;
 
-    beforeEach(() => {
-      wrapper = shallow(<TodoList {...props} />);
+      beforeEach(() => {
+        const renderer = createRenderer();
+        renderer.render(<TodoList {...props} />);
+        component = renderer.getRenderOutput();
+      });
+
+      it("snapshots", () => {
+        expect(component).toMatchSnapshot();
+      });
     });
 
-    it("snapshots", () => {
-      expect(wrapper.debug()).toMatchSnapshot();
-    });
+    describe("enzyme", () => {
+      let wrapper: ShallowWrapper;
 
-    it("renders a todo item", () => {
-      expect(
+      beforeEach(() => {
+        wrapper = shallow(<TodoList {...props} />);
+      });
+
+      it("snapshots", () => {
+        expect(wrapper.debug()).toMatchSnapshot();
+      });
+
+      it("renders all todo items", () => {
+        const items = wrapper.find("TodoItem");
+
+        // Correct number of items exist
+        expect(items).toHaveLength(TODO_LIST.length);
+
+        // Passing todo list
+        expect(items.first().prop("todo")).toEqual(TODO_LIST[0]);
+      });
+
+      it("changes todo items", () => {
         wrapper
           .find("TodoItem")
           .first()
-          .prop("todo")
-      ).toEqual(TODO_LIST[0]);
+          .simulate("change", TODO_LIST[0]);
+
+        expect(props.onTodoChange).toHaveBeenCalledWith(TODO_LIST[0]);
+      });
     });
   });
 });

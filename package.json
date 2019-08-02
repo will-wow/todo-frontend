@@ -39,7 +39,7 @@
     "lint:eslint": "eslint 'src/**/*.{ts,tsx}'",
     "lint:prettier": "prettier --write **/*.{ts,tsx,json,md}",
     "test": "react-scripts test",
-    "test:coverage": "react-scripts test --env=jsdom --coverage",
+    "test:coverage": "react-scripts test --env=jsdom --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "deploy": "surge build https://todo-react-testing.surge.sh"
   },
@@ -53,7 +53,10 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
-      "!src/serviceWorker.ts"
+      "!src/serviceWorker.ts",
+      "!src/redux/**/*",
+      "!src/index.tsx",
+      "!src/**/*.d.ts"
     ]
   },
   "browserslist": {

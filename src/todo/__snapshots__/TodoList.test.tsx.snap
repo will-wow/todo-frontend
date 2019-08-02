@@ -1,24 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TodoList enzyme shallow snapshots 1`] = `
-"<styled.div className=\\"TodoList\\" mx=\\"auto\\" style={{...}}>
-  <Styled(styled.div) mb={2} justifyContent=\\"space-between\\" alignItems=\\"flex-end\\">
-    <Styled(Styled(styled.div)) as=\\"h2\\" m={0} fontSize={4} fontWeight=\\"bold\\">
-      Todo List for:
-    </Styled(Styled(styled.div))>
-    <Connect(UsernameInput) />
-  </Styled(styled.div)>
-  <styled.hr borderColor=\\"gray\\" borderWidth={1} />
-  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
-  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
-  <Styled(Styled(styled.div)) fontSize={3} mt={2} as=\\"h2\\" m={0} fontWeight=\\"bold\\">
-    Done Items
-  </Styled(Styled(styled.div))>
-  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
-</styled.div>"
-`;
-
-exports[`TodoList react-test-renderer snapshots 1`] = `
+exports[`TodoList full render react-test-renderer snapshots 1`] = `
 <div
   className="TodoList sc-bdVaJa hTTfNc"
   style={
@@ -161,4 +143,100 @@ exports[`TodoList react-test-renderer snapshots 1`] = `
     </button>
   </div>
 </div>
+`;
+
+exports[`TodoList shallow enzyme snapshots 1`] = `
+"<styled.div className=\\"TodoList\\" mx=\\"auto\\" style={{...}}>
+  <Styled(styled.div) mb={2} justifyContent=\\"space-between\\" alignItems=\\"flex-end\\">
+    <Styled(Styled(styled.div)) as=\\"h2\\" m={0} fontSize={4} fontWeight=\\"bold\\">
+      Todo List for:
+    </Styled(Styled(styled.div))>
+    <Connect(UsernameInput) />
+  </Styled(styled.div)>
+  <styled.hr borderColor=\\"gray\\" borderWidth={1} />
+  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
+  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
+  <Styled(Styled(styled.div)) fontSize={3} mt={2} as=\\"h2\\" m={0} fontWeight=\\"bold\\">
+    Done Items
+  </Styled(Styled(styled.div))>
+  <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
+</styled.div>"
+`;
+
+exports[`TodoList shallow react-test-renderer snapshots 1`] = `
+<ForwardRef(styled.div)
+  className="TodoList"
+  mx="auto"
+  style={
+    Object {
+      "maxWidth": "25rem",
+    }
+  }
+>
+  <ForwardRef(Styled(styled.div))
+    alignItems="flex-end"
+    justifyContent="space-between"
+    mb={2}
+  >
+    <ForwardRef(Styled(Styled(styled.div)))
+      as="h2"
+      fontSize={4}
+      fontWeight="bold"
+      m={0}
+    >
+      Todo List for:
+    </ForwardRef(Styled(Styled(styled.div)))>
+    <Memo(ConnectFunction) />
+  </ForwardRef(Styled(styled.div))>
+  <ForwardRef(styled.hr)
+    borderColor="gray"
+    borderWidth={1}
+  />
+  <TodoItem
+    onChange={[MockFunction]}
+    onDelete={[MockFunction]}
+    todo={
+      Object {
+        "createdAt": "2019-01-01",
+        "done": false,
+        "id": 1,
+        "title": "Pending Item",
+      }
+    }
+  />
+  <TodoItem
+    onChange={[MockFunction]}
+    onDelete={[MockFunction]}
+    todo={
+      Object {
+        "createdAt": "2019-02-01",
+        "done": false,
+        "id": "",
+        "title": "New Item",
+        "uuid": "abc",
+      }
+    }
+  />
+  <ForwardRef(Styled(Styled(styled.div)))
+    as="h2"
+    fontSize={3}
+    fontWeight="bold"
+    m={0}
+    mt={2}
+  >
+    Done Items
+  </ForwardRef(Styled(Styled(styled.div)))>
+  <TodoItem
+    onChange={[MockFunction]}
+    onDelete={[MockFunction]}
+    todo={
+      Object {
+        "createdAt": "2019-01-01",
+        "done": true,
+        "id": 2,
+        "title": "Done Item",
+      }
+    }
+  />
+</ForwardRef(styled.div)>
 `;
