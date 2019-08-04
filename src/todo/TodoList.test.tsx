@@ -1,14 +1,14 @@
-import React from "react";
+import React, { ReactComponentElement } from "react";
 import { shallow, ShallowWrapper, mount, ReactWrapper } from "enzyme";
 
 import renderer from "react-test-renderer";
 import { createRenderer } from "react-test-renderer/shallow";
 import ReactTestUtils from "react-dom/test-utils";
 
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, RenderResult } from "@testing-library/react";
 
 import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
+import configureMockStore, { MockStoreEnhanced } from "redux-mock-store";
 import thunk from "redux-thunk";
 
 import TodoList, { TodoListProps } from "./TodoList";
@@ -53,21 +53,73 @@ describe("TodoList", () => {
   });
 
   describe("full render", () => {
+    let store: MockStoreEnhanced<Store, {}>;
+    let element: ReactComponentElement<any>;
+
+    beforeEach(() => {
+      store = mockStore(defaultStore);
+
+      element = (
+        <Provider store={store}>
+          <TodoList {...props} />
+        </Provider>
+      );
+    });
+
     describe("react-test-renderer", () => {
       let component: renderer.ReactTestRenderer;
 
       beforeEach(() => {
-        const store = mockStore(defaultStore);
-
-        component = renderer.create(
-          <Provider store={store}>
-            <TodoList {...props} />
-          </Provider>
-        );
+        component = renderer.create(element);
       });
 
       it("snapshots", () => {
         expect(component.toJSON()).toMatchSnapshot();
+      });
+    });
+
+    describe("enzyme mount", () => {
+      let wrapper: ReactWrapper;
+
+      beforeEach(() => {
+        wrapper = mount(element);
+      });
+
+      it("snapshots", () => {
+        expect(wrapper.debug()).toMatchSnapshot();
+      });
+
+      it("has an editable title", () => {
+        expect(
+          wrapper
+            .find(".todo-item input")
+            .first()
+            .prop("value")
+        ).toEqual(TODO_LIST[0].title);
+      });
+
+      it("changes todo items", () => {
+        wrapper
+          .find(".todo-item input")
+          .first()
+          .simulate("change", { target: { value: "New Title" } });
+
+        expect(props.onTodoChange).toHaveBeenCalledWith({
+          ...TODO_LIST[0],
+          title: "New Title"
+        });
+      });
+    });
+
+    describe("react test library", () => {
+      let result: RenderResult;
+
+      beforeEach(() => {
+        result = render(element);
+      });
+
+      it("snapshots", () => {
+        result.queryByPlaceholderText("Enter a todo item");
       });
     });
   });

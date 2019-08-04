@@ -27,12 +27,12 @@ const TodoItem: React.FC<Props> = ({ todo, onChange, onDelete }) => {
   const textDecoration = done ? "line-through" : "";
 
   return (
-    <Flex className="TodoItem" my="1">
+    <Flex className="todo-item" my="1">
       <Input
         placeholder="Enter a todo item"
         value={title}
         onChange={handleChange}
-        className="TodoItem__input"
+        className="todo-item__input"
         style={{ flexGrow: 1, textDecoration }}
       />
       {!Todo.isNew(todo) && (
