@@ -16,15 +16,9 @@ exports[`TodoList full render enzyme mount snapshots 1`] = `
                     </h2>
                   </StyledComponent>
                 </Styled(Styled(styled.div))>
-                <Connect(UsernameInput)>
-                  <UsernameInput username=\\"User\\" updateUsername={[Function]}>
-                    <Styled(Styled(styled.div)) value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1}>
-                      <StyledComponent value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" as=\\"input\\" p={2} borderWidth=\\"1px\\" borderStyle=\\"solid\\" borderColor=\\"gray\\" fontSize={1} forwardedComponent={{...}} forwardedRef={{...}}>
-                        <input value=\\"User\\" onChange={[Function: handleChange]} placeholder=\\"Enter your name here\\" fontSize={1} className=\\"sc-bdVaJa sc-htpNat sc-htoDjs jplWqw\\" />
-                      </StyledComponent>
-                    </Styled(Styled(styled.div))>
-                  </UsernameInput>
-                </Connect(UsernameInput)>
+                <Component>
+                  <div className=\\"UsernameInput\\" />
+                </Component>
               </div>
             </StyledComponent>
           </Styled(styled.div)>
@@ -128,6 +122,289 @@ exports[`TodoList full render enzyme mount snapshots 1`] = `
 </Provider>"
 `;
 
+exports[`TodoList full render react testing library snapshots 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="TodoList sc-bdVaJa hTTfNc"
+        style="max-width: 25rem;"
+      >
+        <div
+          class="sc-bdVaJa sc-bwzfXH dpqGKp"
+        >
+          <h2
+            class="sc-bdVaJa sc-htpNat sc-bxivhb kXNIHy"
+            font-size="4"
+            font-weight="bold"
+          >
+            Todo List for:
+          </h2>
+          <div
+            class="UsernameInput"
+          />
+        </div>
+        <hr
+          class="sc-dnqmqq WskOd"
+        />
+        <div
+          class="sc-bdVaJa todo-item sc-bwzfXH dKmwgv"
+        >
+          <input
+            class="sc-bdVaJa sc-htpNat todo-item__input sc-htoDjs jplWqw"
+            font-size="1"
+            placeholder="Enter a todo item"
+            style="flex-grow: 1;"
+            value="Pending Item"
+          />
+          <button
+            class="sc-bdVaJa sc-EHOje kturus"
+            color="white"
+            font-size="inherit"
+            font-weight="bold"
+          >
+            Done
+          </button>
+          <button
+            class="sc-bdVaJa sc-EHOje gPdMQc"
+            color="white"
+            font-size="inherit"
+            font-weight="bold"
+          >
+            X
+          </button>
+        </div>
+        <div
+          class="sc-bdVaJa todo-item sc-bwzfXH dKmwgv"
+        >
+          <input
+            class="sc-bdVaJa sc-htpNat todo-item__input sc-htoDjs jplWqw"
+            font-size="1"
+            placeholder="Enter a todo item"
+            style="flex-grow: 1;"
+            value="New Item"
+          />
+          <button
+            class="sc-bdVaJa sc-EHOje kturus"
+            color="white"
+            font-size="inherit"
+            font-weight="bold"
+          >
+            Done
+          </button>
+          <button
+            class="sc-bdVaJa sc-EHOje gPdMQc"
+            color="white"
+            font-size="inherit"
+            font-weight="bold"
+          >
+            X
+          </button>
+        </div>
+        <h2
+          class="sc-bdVaJa sc-htpNat sc-bxivhb rLXOD"
+          font-size="3"
+          font-weight="bold"
+        >
+          Done Items
+        </h2>
+        <div
+          class="sc-bdVaJa todo-item sc-bwzfXH dKmwgv"
+        >
+          <input
+            class="sc-bdVaJa sc-htpNat todo-item__input sc-htoDjs jplWqw"
+            font-size="1"
+            placeholder="Enter a todo item"
+            style="flex-grow: 1; text-decoration: line-through;"
+            value="Done Item"
+          />
+          <button
+            class="sc-bdVaJa sc-EHOje isXsaM"
+            color="white"
+            font-size="inherit"
+            font-weight="bold"
+          >
+            Undo
+          </button>
+          <button
+            class="sc-bdVaJa sc-EHOje gPdMQc"
+            color="white"
+            font-size="inherit"
+            font-weight="bold"
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="TodoList sc-bdVaJa hTTfNc"
+      style="max-width: 25rem;"
+    >
+      <div
+        class="sc-bdVaJa sc-bwzfXH dpqGKp"
+      >
+        <h2
+          class="sc-bdVaJa sc-htpNat sc-bxivhb kXNIHy"
+          font-size="4"
+          font-weight="bold"
+        >
+          Todo List for:
+        </h2>
+        <div
+          class="UsernameInput"
+        />
+      </div>
+      <hr
+        class="sc-dnqmqq WskOd"
+      />
+      <div
+        class="sc-bdVaJa todo-item sc-bwzfXH dKmwgv"
+      >
+        <input
+          class="sc-bdVaJa sc-htpNat todo-item__input sc-htoDjs jplWqw"
+          font-size="1"
+          placeholder="Enter a todo item"
+          style="flex-grow: 1;"
+          value="Pending Item"
+        />
+        <button
+          class="sc-bdVaJa sc-EHOje kturus"
+          color="white"
+          font-size="inherit"
+          font-weight="bold"
+        >
+          Done
+        </button>
+        <button
+          class="sc-bdVaJa sc-EHOje gPdMQc"
+          color="white"
+          font-size="inherit"
+          font-weight="bold"
+        >
+          X
+        </button>
+      </div>
+      <div
+        class="sc-bdVaJa todo-item sc-bwzfXH dKmwgv"
+      >
+        <input
+          class="sc-bdVaJa sc-htpNat todo-item__input sc-htoDjs jplWqw"
+          font-size="1"
+          placeholder="Enter a todo item"
+          style="flex-grow: 1;"
+          value="New Item"
+        />
+        <button
+          class="sc-bdVaJa sc-EHOje kturus"
+          color="white"
+          font-size="inherit"
+          font-weight="bold"
+        >
+          Done
+        </button>
+        <button
+          class="sc-bdVaJa sc-EHOje gPdMQc"
+          color="white"
+          font-size="inherit"
+          font-weight="bold"
+        >
+          X
+        </button>
+      </div>
+      <h2
+        class="sc-bdVaJa sc-htpNat sc-bxivhb rLXOD"
+        font-size="3"
+        font-weight="bold"
+      >
+        Done Items
+      </h2>
+      <div
+        class="sc-bdVaJa todo-item sc-bwzfXH dKmwgv"
+      >
+        <input
+          class="sc-bdVaJa sc-htpNat todo-item__input sc-htoDjs jplWqw"
+          font-size="1"
+          placeholder="Enter a todo item"
+          style="flex-grow: 1; text-decoration: line-through;"
+          value="Done Item"
+        />
+        <button
+          class="sc-bdVaJa sc-EHOje isXsaM"
+          color="white"
+          font-size="inherit"
+          font-weight="bold"
+        >
+          Undo
+        </button>
+        <button
+          class="sc-bdVaJa sc-EHOje gPdMQc"
+          color="white"
+          font-size="inherit"
+          font-weight="bold"
+        >
+          X
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
 exports[`TodoList full render react-test-renderer snapshots 1`] = `
 <div
   className="TodoList sc-bdVaJa hTTfNc"
@@ -147,12 +424,8 @@ exports[`TodoList full render react-test-renderer snapshots 1`] = `
     >
       Todo List for:
     </h2>
-    <input
-      className="sc-bdVaJa sc-htpNat sc-htoDjs jplWqw"
-      fontSize={1}
-      onChange={[Function]}
-      placeholder="Enter your name here"
-      value="User"
+    <div
+      className="UsernameInput"
     />
   </div>
   <hr
@@ -279,7 +552,7 @@ exports[`TodoList shallow enzyme snapshots 1`] = `
     <Styled(Styled(styled.div)) as=\\"h2\\" m={0} fontSize={4} fontWeight=\\"bold\\">
       Todo List for:
     </Styled(Styled(styled.div))>
-    <Connect(UsernameInput) />
+    <Component />
   </Styled(styled.div)>
   <styled.hr borderColor=\\"gray\\" borderWidth={1} />
   <TodoItem todo={{...}} onChange={[Function: mockConstructor]} onDelete={[Function: mockConstructor]} />
@@ -314,7 +587,7 @@ exports[`TodoList shallow react-test-renderer snapshots 1`] = `
     >
       Todo List for:
     </ForwardRef(Styled(Styled(styled.div)))>
-    <Memo(ConnectFunction) />
+    <Unknown />
   </ForwardRef(Styled(styled.div))>
   <ForwardRef(styled.hr)
     borderColor="gray"

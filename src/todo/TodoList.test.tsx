@@ -2,8 +2,7 @@ import React, { ReactComponentElement } from "react";
 import { shallow, ShallowWrapper, mount, ReactWrapper } from "enzyme";
 
 import renderer from "react-test-renderer";
-import { createRenderer } from "react-test-renderer/shallow";
-import ReactTestUtils from "react-dom/test-utils";
+import { createRenderer, ShallowRenderer } from "react-test-renderer/shallow";
 
 import { render, fireEvent, RenderResult } from "@testing-library/react";
 
@@ -41,6 +40,10 @@ const TODO_LIST = [
   }
 ];
 
+jest.mock("../user/UsernameInput", () => () => (
+  <div className="UsernameInput" />
+));
+
 describe("TodoList", () => {
   let props: TodoListProps;
 
@@ -67,14 +70,50 @@ describe("TodoList", () => {
     });
 
     describe("react-test-renderer", () => {
-      let component: renderer.ReactTestRenderer;
+      let testRenderer: renderer.ReactTestRenderer;
+      let component: renderer.ReactTestInstance;
 
       beforeEach(() => {
-        component = renderer.create(element);
+        testRenderer = renderer.create(element);
+        component = testRenderer.root;
       });
 
       it("snapshots", () => {
-        expect(component.toJSON()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
+      });
+
+      it("changes todo items", () => {
+        const input = component.findByProps({ value: TODO_LIST[0].title });
+        input.props.onChange({ target: { value: "New Title" } });
+
+        expect(props.onTodoChange).toHaveBeenCalledWith({
+          ...TODO_LIST[0],
+          title: "New Title"
+        });
+      });
+    });
+
+    describe("enzyme mount with mock", () => {
+      let wrapper: ReactWrapper;
+
+      beforeEach(() => {
+        wrapper = mount(<TodoList {...props} />);
+      });
+
+      // afterEach(() => {
+      //   jest.restoreAllMocks();
+      // });
+
+      it("changes todo items", () => {
+        wrapper
+          .find("input")
+          .find({ value: TODO_LIST[0].title })
+          .simulate("change", { target: { value: "New Title" } });
+
+        expect(props.onTodoChange).toHaveBeenCalledWith({
+          ...TODO_LIST[0],
+          title: "New Title"
+        });
       });
     });
 
@@ -111,7 +150,7 @@ describe("TodoList", () => {
       });
     });
 
-    describe("react test library", () => {
+    describe("react testing library", () => {
       let result: RenderResult;
 
       beforeEach(() => {
@@ -119,23 +158,43 @@ describe("TodoList", () => {
       });
 
       it("snapshots", () => {
-        result.queryByPlaceholderText("Enter a todo item");
+        expect(result).toMatchSnapshot();
+      });
+
+      it("renders all todo items", () => {
+        const inputs = result.queryAllByPlaceholderText("Enter a todo item");
+        expect(inputs).toHaveLength(TODO_LIST.length);
+      });
+
+      it("has an editable title", () => {
+        expect(result.getByDisplayValue(TODO_LIST[0].title)).toBeDefined();
+      });
+
+      it("changes todo items", () => {
+        const input = result.getByDisplayValue("Pending Item");
+        fireEvent.change(input, {
+          target: { value: "New Title" }
+        });
+
+        expect(props.onTodoChange).toHaveBeenCalledWith({
+          ...TODO_LIST[0],
+          title: "New Title"
+        });
       });
     });
   });
 
   describe("shallow", () => {
     describe("react-test-renderer", () => {
-      let component: React.ReactElement;
+      let testRenderer: ShallowRenderer;
 
       beforeEach(() => {
-        const renderer = createRenderer();
-        renderer.render(<TodoList {...props} />);
-        component = renderer.getRenderOutput();
+        testRenderer = createRenderer();
+        testRenderer.render(<TodoList {...props} />);
       });
 
       it("snapshots", () => {
-        expect(component).toMatchSnapshot();
+        expect(testRenderer.getRenderOutput()).toMatchSnapshot();
       });
     });
 
